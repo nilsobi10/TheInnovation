@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Gewächshaus</title>
+  <script src="https://kit.fontawesome.com/10f0e1a6f3.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="menu" style="transform:translateX(-100%) scaleX(-1);">
+    <div class="menulogin">
+      <label>TheInnovation</label>
+      <button onclick="openlogin()">Login</button>
+
+      <div class="login" style="display:none;opacity:0;">
+        <p>Passwort:</p>
+        <input type="password" id="password" onclick="value=''" />
+        <button id="checkpassword" onclick="checkpassword();">anmelden</button>
+
+      </div>
+    </div>
+    <div class="menupoints" onclick="closemenu();">
+      <a href="#home">Startseite</a>
+      <a href="#plant">Pflanzen</a>
+      <a href="#status">Status</a>
+      <a href="#controll">Steuerung</a>
+      <a href="#wetter">Wetter</a>
+      <a href="#pool">Pool</a>
+      <a href="#impressum">Impressum</a>
+    </div>
+
+
+  </div>
+
+  <div class="menuoverlay" style="display:none;opacity:0;" onclick="closemenu();">
+
+  </div>
+  <div class="loading" style="display:none;opacity:0;">
+    <div class="loadingbox">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <div class="topbar">
+    <img src="menu.png" onclick="openmenu();" draggable="false">
+    Gewächshaus
+  </div>
+  <div class="page" id="home">
+
+    <div class="Starttext" id="Starttext-top" onclick="window.location.hash='#status'">
+      <div class="headline">STATUS
+      </div><br> Hier kannst du den aktuellen Status des Gewächshauses endecken. <br>Die Daten werden von Sensoren gesammelt, berechnt und alle 3 Minuten aktualisiert. <br>Dabei kannst du alle Veränderungen der letzten 7 Tage anschauen. <br>Des
+      Weiteren findest du alle Pflanzen relevante Werte der gesamten aktuellen Saison. <br>
+    </div>
+    <div class="Starttext" onclick="window.location.hash='#wetter'">
+      <div class="headline">WETTER
+      </div><br> Hier kannst du die aktuellen Wetterdaten des Standorts des Gewächshauses entdecken. <br>Die Wetterdaten werden mit Hilfe von Satelitenbildern zum Zeitpukt des Aufrufs berechnet.<br>
+    </div>
+    <div class="Starttext" onclick="window.location.hash='#plant'">
+      <div class="headline">Pflanzen
+      </div><br> Hier kannst du die aktuellen Pflanzenarten und Fortschritte der Pflanzen entdecken.<br> Diese Funktion ist momentan noch in Bearbeitung!
+      <!-- NOTE: Wikipedia Seiten einfügen -->
+    </div>
+    <div class="Starttext" onclick="window.location.hash='#controll'">
+      <div class="headline">Steuerung
+      </div><br> Hier kannst du, falls du die Berechtigung hast, das gesamte Gewächshaus steuern.<br>
+    </div>
+    <div class="Starttext" onclick="window.location.hash='#pool'">
+      <div class="headline">Pooltemperatur
+      </div><br> Hier findest du die Wassertemperatur vom Pool.
+    </div>
+    <div class="Starttext" onclick="window.location.hash='#impressum'">
+      <div class="headline">Impressum
+      </div><br>Hier findest du das Impressum.<br>
+    </div>
+
+  </div>
+  <div class="page" id="plant">
+    <div id="box-Pflanzen" id="Pflanzen">
+      <div id="Pflanzen"></div>
+      <i class="far fa-plus-square" id="addplant" onclick="addplant();"></i>
+    </div>
+  </div>
+
+
+  <div class="page" id="status">
+    <div class="box" id="status">
+      <h1>Status</h1>
+      <p onclick="">Temperatur / Luftfeuchtigkeit</p>
+      <div class="Thermometercase">
+
+        <div class="Thermometer">
+          <div class="grenze" id="obereGrenze"></div>
+          <div class="grenze" id="untereGrenze"></div>
+          <div class="strich" id="Strich1"></div>
+          <div class="strich" id="Strich2"></div>
+          <div class="strich" id="Strich3"></div>
+        </div>
+        <div class="Temperatur" id="Temperatur1" onclick="openTemperature(1);"></div>
+        <div class="Temperatur" id="Temperatur2" onclick="openTemperature(2);"></div>
+        <div class="Temperatur" id="Temperatur3" onclick="openTemperature(3);"></div>
+      </div>
+      <p onclick="">Bodenfeuchtigkeit</p>
+      <p onclick="">Wassertank</p>
+      <p>Wetterstation</p>
+
+    </div>
+  </div>
+
+  <div class="page" id="controll">
+
+  </div>
+  <div class="page" id="controll">
+    Steuerung
+  </div>
+  <div class="page" id="wetter">
+    <div class="box" id="klima" onclick="ini_wetter()">
+      Die Seite konnte nicht geladen werden.<br>
+      <p id="sad">&#128577;</p>
+      <br> Lade die Seite bitte neu oder klicke hier.
+    </div>
+  </div>
+  <div class="page" id="pool">
+    <div id="graph2">
+      <div id="chart">
+      </div>
+      <a href="wassertemperatur\wassertemperatur.html">Hier geht es zur aktuellen Temperatur</a>
+    </div>
+  </div>
+  <div class="page" id="impressum">
+    <div class="box-impressum">
+      <p>Impressum: <br>
+        <br>
+        Nils Oberländer <br>
+        E-mail: nils.obi10@gmail.com <br>
+        Diese Webseite ist in Zusammenarbeit mit den Entwicklern von
+        <a href="https://jusax.de/">jusax.de</a>
+        und <a href="https://ccw.icu/">comcloudway</a>
+        entstanden. <br>
+        Die Wetterdaten für den Wetterbericht stammen von <a href="https://openweathermap.org/">openweathermap</a> .
+      </p>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.stock.min.js"></script><!-- NOTE: Graph Temperatur -->
+  <script src="graph.js"></script>
+  <script src="functions.js">
+
+  </script>
+  <script src="pages/home.js"></script>
+  <script src="pages/pool.js"></script>
+  <script src="pages/plant.js"></script>
+  <script src="pages/status.js"></script>
+  <script src="pages/controll.js"></script>
+  <script src="pages/wetter.js"></script>
+  <script src="pages/impressum.js"></script>
+  <script src="index.js"></script>
+
+
+</body>
+
+</html>

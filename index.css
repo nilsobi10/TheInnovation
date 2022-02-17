@@ -1,0 +1,553 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body, html {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: absolute;
+}
+
+#klima {
+  line-height: 1.5;
+}
+
+#sad {
+  font-size: 100px;
+  line-height: 0.5;
+}
+
+#impressum {
+  color: green;
+}
+
+#weitereInfos {
+  float: right;
+  padding-left: 20%;
+}
+
+#weitereInfos:hover {
+  color: blue;
+}
+
+#info {
+  float: left;
+}
+
+.box {
+  background-image: linear-gradient(45deg, #00bb00, green);
+  opacity: 0.95;
+  padding: 20px 20px;
+  margin: auto;
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+  z-index: 10;
+  font-size: 20px;
+}
+
+# {
+  height: 100%;
+  width: 100%;
+}
+
+#box-Pflanzen {
+  position: relative;
+  background-image: linear-gradient(45deg, #00bb00, green);
+  opacity: 0.95;
+  padding: 20px 20px 40px 20px;
+  margin: auto;
+  height: 100%;
+  width: 70%;
+  border-radius: 20px;
+  color: white;
+  z-index: 10;
+  font-size: 20px;
+}
+
+.fa, .far, .fas {
+  color: white;
+  font-size: 100%;
+}
+
+#removeplant {
+  padding-left: 2%;
+  float: right;
+}
+
+#addplant {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.box-impressum {
+  opacity: 0.95;
+  background-image: linear-gradient(45deg, #00bb00, green);
+  height: 100%;
+  padding: 10px 20px;
+  margin: auto;
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+  z-index: 10;
+  font-size: 30px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px #000;
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: green;
+  border-radius: 2.5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00bb00;
+}
+
+.page {
+  /* NOTE: Gestaltung der Hauptfläche */
+  margin-top: 2cm;
+  width: calc(100% - 1cm);
+  min-height: calc(100% - 2cm - 1cm);
+  display: none;
+  background-color: #eee;
+  padding: 0.5cm;
+  font-size: 0.5cm;
+  background: url(background.png) repeat center center;
+  background-size: cover;
+}
+
+.page:target {
+  display: flex;
+}
+
+#home:target {
+  flex-direction: column;
+}
+
+.Starttext {
+  position: relative;
+  color: white;
+  padding: 3%;
+  margin-bottom: 2%;
+  width: 75%;
+  font-size: 160%;
+  background-image: linear-gradient(45deg, #00bb00, green);
+  opacity: 0.9;
+  border-radius: 20px;
+}
+
+.Starttext:hover {
+  background-image: linear-gradient(45deg, #00bb00, #00bb00);
+}
+
+.Thermometercase {
+  position: relative;
+  width: 3cm;
+  display: none;
+}
+
+.Temperatur {
+  position: absolute;
+  font-size: 0.7cm;
+  margin: 0px;
+  padding: 0px;
+  left: 4.25cm;
+}
+
+.Thermometer {
+  color: #eaeaea;
+  position: absolute;
+  background-image: linear-gradient(#d54e53, #164e90);
+  height: 7cm;
+  width: 2cm;
+  border-radius: 1cm;
+  margin: 0cm 2cm;
+}
+
+.grenze {
+  position: absolute;
+  width: 100%;
+  height: 1cm;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.7cm;
+  z-index: 100;
+}
+
+#untereGrenze {
+  bottom: 0.25cm;
+}
+
+#obereGrenze {
+  top: 0.25cm;
+}
+
+.strich{
+  position: absolute;
+  width: 80%;
+  margin-left: 10%;
+  background-color: #969896;
+  height: 0.1cm;
+}
+
+#box-status {
+  position: relative;
+  opacity: 0.95;
+  display: none;
+  background-image: linear-gradient(45deg, #00bb00, green);
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+  z-index: 10;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: auto;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Starttext-top {
+  margin-top: 3%;
+}
+
+#home div:nth-child(2n) {
+  align-self: end;
+}
+
+.headline {
+  font-size: 50px;
+  color: white;
+}
+
+.menu {
+  z-index: 100;
+  position: fixed;
+  width: 10cm;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #eee;
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.menulogin {
+  /* NOTE: Hintergrund von der Überschrift im Menü */
+  height: 7cm;
+  width: 100%;
+  background-image: linear-gradient(45deg, #00bb00, green);
+  transform: scaleX(-1);
+  font-size: 1cm;
+  color: white;
+  transition: width 1s;
+}
+
+.menulogin label {
+  width: calc(100% - 1cm);
+  height: 50%;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1cm;
+  margin-left: 0.5cm;
+}
+
+.menulogin p {
+  padding-top: 1.5cm;
+  text-align: center;
+  margin: 0px;
+}
+
+.menulogin input {
+  text-align: center;
+  display: flex;
+  font-size: 0.7cm;
+  background: #00bb00;
+  border: none;
+  border-radius: 0.85cm;
+  margin: 0.2cm auto 1cm auto;
+  outline: none;
+  transition: background-color 0.15s linear;
+  color: white;
+}
+
+.menulogin input:hover {
+  background-color: #00dd00;
+}
+
+.menulogin button {
+  display: flex;
+  width: auto;
+  font-size: 1cm;
+  height: 1.7cm;
+  padding: 0.25cm 1cm 0.25cm 1cm;
+  background: #00bb00;
+  border: none;
+  border-radius: 0.85cm;
+  margin: 0 auto;
+  outline: none;
+  transition: background-color 0.15s linear;
+  color: white;
+}
+
+.menulogin button:hover {
+  background-color: #00dd00;
+}
+
+.menupoints {
+  height: calc(100% - 7cm);
+  color: #212121 !important;
+  transform: scaleX(-1);
+}
+
+.menupoints a {
+  width: calc(100% - 1.6cm);
+  display: flex;
+  align-items: center;
+  color: #212121 !important;
+  height: 1cm;
+  font-size: 0.75cm;
+  text-decoration: none;
+  padding: 0.7cm 0.8cm;
+  transition: background-color 0.1s linear;
+  background-color: #eee;
+}
+
+.menupoints a:hover {
+  background-color: #fff;
+}
+
+.menuoverlay {
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s linear;
+}
+
+.topbar {
+  z-index: 50;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: green;
+  height: 2cm;
+  width: calc(100% - 4cm);
+  font-size: 250%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: white;
+  padding: 0 2cm;
+  box-shadow: 0px 3px 4px 4px green;
+}
+
+.topbar img {
+  position: absolute;
+  left: 0;
+  height: 1.2cm;
+  top: 0.4cm;
+  left: 0.4cm;
+}
+
+.login {
+  position: fixed;
+  z-index: 110;
+  width: 100%;
+}
+
+#closelogin {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+}
+
+.loading {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100000;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  transition: opacity 0.15s linear;
+}
+
+.loadingbox {
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loadingbox div {
+  position: absolute;
+  height: 44%;
+  width: 44%;
+  border-radius: 25%;
+  background-color: #eee;
+  animation: loadingboxani 6s linear infinite;
+}
+
+.loadingbox div:nth-child(1) {
+  left: 4%;
+  top: 4%;
+  animation-delay: 0s;
+}
+
+.loadingbox div:nth-child(2) {
+  left: 52%;
+  top: 52%;
+  animation-delay: -2s;
+}
+
+.loadingbox div:nth-child(3) {
+  left: 4%;
+  top: 52%;
+  animation-delay: -4s;
+}
+
+@keyframes loadingboxani {
+  0% {
+    left: 4%;
+    top: 4%;
+  }
+
+  8.33% {
+    left: 52%;
+    top: 4%;
+  }
+
+  25% {
+    left: 52%;
+    top: 4%;
+  }
+
+  33.33% {
+    left: 52%;
+    top: 52%;
+  }
+
+  50% {
+    left: 52%;
+    top: 52%;
+  }
+
+  58.33% {
+    left: 4%;
+    top: 52%;
+  }
+
+  75% {
+    left: 4%;
+    top: 52%;
+  }
+
+  83.33% {
+    left: 4%;
+    top: 4%;
+  }
+
+  100% {
+    left: 4%;
+    top: 4%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .page {
+    margin-top: 1.2cm;
+    min-height: calc(100% - 2cm);
+  }
+
+  .menulogin {
+    height: 5cm;
+  }
+
+  .menulogin label {
+    padding-top: 0.5cm;
+    font-size: 0.5cm;
+  }
+
+  .menulogin button {
+    font-size: 0.6cm;
+    height: 1.3cm;
+  }
+
+  .menupoints {
+    height: calc(100% - 5cm);
+  }
+
+  .menupoints a {
+    font-size: 0.6cm;
+    padding: 0.5cm 0.6cm;
+    width: calc(100% - 1.2cm);
+  }
+
+  .menu {
+    width: 60%;
+  }
+
+  .bild {
+    width: 90%;
+  }
+
+  .box {
+    width: 95%;
+  }
+
+  .Starttext {
+    font-size: 80%;
+    width: 85%;
+    margin-bottom: 3%;
+  }
+
+  .headline {
+    font-size: 120%;
+    margin-bottom: -17px;
+  }
+
+  .topbar {
+    height: 1.2cm;
+  }
+
+  .topbar img {
+    height: 1cm;
+    top: 0.2cm;
+  }
+
+  .box-impressum {
+    font-size: 20px;
+    padding: 2px 5px;
+  }
+
+  /*#status:target {
+    flex-direction: column;
+  } */
+}
