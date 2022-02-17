@@ -79,6 +79,7 @@ function closelogin() {
 };
 
 function checkpassword() {
+  //das neue ist hier
   (async () => {
     anmeldung = password.value;
     var hash = (await crypto.subtle.digest("SHA-256", (new TextEncoder().encode(anmeldung))));
