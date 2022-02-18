@@ -385,18 +385,20 @@ body, html {
   padding: 0.7cm 0.8cm;
   transition: background-color 0.1s linear;
   background-color: var(--color-background-light);
+  border-bottom-style: solid;
+  border-bottom-color: var(--color-background);
 }
 
 .menupoints a:nth-child(3n+1) {
-  border-color: var(--color-pink);
+  border-left-color: var(--color-pink);
 }
 
 .menupoints a:nth-child(3n+2) {
-  border-color: var(--color-red);
+  border-left-color: var(--color-red);
 }
 
 .menupoints a:nth-child(3n+3) {
-  border-color: var(--color-orange);
+  border-left-color: var(--color-orange);
 }
 
 .menupoints a:hover {
