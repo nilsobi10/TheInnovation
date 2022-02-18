@@ -89,24 +89,87 @@
 
 
   <div class="page" id="status">
-    <div class="box" id="status">
-      <h1>Status</h1>
-      <p onclick="">Temperatur / Luftfeuchtigkeit</p>
-      <div class="Thermometercase">
+    <div class="box" id="box-status">
+      <p class="uberschrift">Status</p>
 
-        <div class="Thermometer">
-          <div class="grenze" id="obereGrenze"></div>
-          <div class="grenze" id="untereGrenze"></div>
-          <div class="strich" id="Strich1"></div>
-          <div class="strich" id="Strich2"></div>
-          <div class="strich" id="Strich3"></div>
+      <p>Temperatur und Luftfeuchtigkeit im Gewächshaus</p>
+      <div class="anzeigen">
+        <div class="Thermometercase">
+          <div class="Thermometer">
+            <div class="grenze" id="obereGrenze"></div>
+            <div class="grenze" id="untereGrenze"></div>
+            <div class="strich" id="Strich1"></div>
+            <div class="strich" id="Strich2"></div>
+            <div class="strich" id="Strich3"></div>
+          </div>
+          <div class="Temperatur" id="Temperatur1"></div>
+          <div class="Temperatur" id="Temperatur2"></div>
+          <div class="Temperatur" id="Temperatur3"></div>
         </div>
-        <div class="Temperatur" id="Temperatur1" onclick="openTemperature(1);"></div>
-        <div class="Temperatur" id="Temperatur2" onclick="openTemperature(2);"></div>
-        <div class="Temperatur" id="Temperatur3" onclick="openTemperature(3);"></div>
+        <div class="Thermometercase">
+          <div class="Thermometer">
+            <div class="grenze" id="obereGrenzehumd"></div>
+            <div class="grenze" id="untereGrenzehumd"></div>
+            <div class="strich" id="Strich1humd"></div>
+            <div class="strich" id="Strich2humd"></div>
+            <div class="strich" id="Strich3humd"></div>
+          </div>
+          <div class="Temperatur" id="Luftfeuchtigkeit1"></div>
+          <div class="Temperatur" id="Luftfeuchtigkeit2"></div>
+          <div class="Temperatur" id="Luftfeuchtigkeit3"></div>
+        </div>
+        <div class="Temphumdgrap">
+          Hier ist demnächst ein Graph zu sehen
+        </div>
       </div>
-      <p onclick="">Bodenfeuchtigkeit</p>
-      <p onclick="">Wassertank</p>
+
+      <div class="aktuelleDaten">
+        <p>aktuelle Messdaten </p>
+        <p class="zeit"> Messdaten vom: </p>
+        <p>Durchschnittliche Luftfeuchtigkeit: </p>
+        <p>Durchschnittliche Temperatur: </p>
+        <p>Luftfeuchtigkeit im Dach: </p>
+        <p>Temperatur im Dach: </p>
+        <p>Luftfeuchtigkeit auf Pflanzenhöhe: </p>
+        <p>Temperatur auf Pflanzenhöhe: </p>
+        <p>Luftfeuchtigleit am Boden: </p>
+        <p>Temperatur am Boden: </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Haus A</th>
+              <th>Haus B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Wohnfläche</th>
+              <td>100</td>
+              <td>150</td>
+            </tr>
+            <tr>
+              <th>Gartenfläche</th>
+              <td>50</td>
+              <td>100</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>Gesamtfläche</th>
+              <td>150</td>
+              <td>250</td>
+            </tr>
+            <tr>
+              <td colspan="3">Alle Angaben in Quadratmetern.</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <p>Bodenfeuchtigkeit</p>
+      <p>Wassertank</p>
       <p>Wetterstation</p>
 
     </div>

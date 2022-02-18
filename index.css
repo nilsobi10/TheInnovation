@@ -52,11 +52,11 @@ body, html {
 }
 
 .box {
+  position: relative;
   background-color: var(--color-background-light);
   padding: 20px 20px;
   margin: auto;
   text-align: center;
-  border-radius: 20px;
   color: var(--color-text);
   z-index: 10;
   font-size: 20px;
@@ -159,7 +159,6 @@ body, html {
   width: 75%;
   font-size: 160%;
   background-color: var(--color-background-light);
-  border-radius: 20px;
   border-left-style: solid;
   border-left-width: 10px;
 }
@@ -180,28 +179,65 @@ body, html {
   background-color: var(--color-background-dark);
 }
 
-.Thermometercase {
+#box-status {
+  width: 100%;
+  border-left-color: var(--color-orange);
+  margin: 0px;
+  margin-top: 2cm;
+  font-size: 1cm;
+}
+
+.uberschrift {
+  margin: 10px;
+  font-weight: bold;
+}
+
+.anzeigen {
   position: relative;
-  width: 3cm;
+  display: flex;
+}
+
+.Temphumdgrap{
+    width: 8cm;
+    height: 7cm;
+}
+
+.Thermometercase {
+  font-size: 0.7cm;
+  position: relative;
+  width: 8cm;
   display: none;
+  margin: auto;
+  border-style: solid;
+  border-color: var(--color-orange);
+}
+
+.Thermometercase p {
+  position: absolute;
+  opacity: 0;
+  right: 0px;
+  font-size: 0.5cm;
+}
+
+.Thermometercase p:hover {
+  opacity: 1;
 }
 
 .Temperatur {
   position: absolute;
-  font-size: 0.7cm;
   margin: 0px;
   padding: 0px;
-  left: 4.25cm;
+  left: 5.25cm;
 }
 
 .Thermometer {
-  color: #eaeaea;
-  position: absolute;
-  background-image: linear-gradient(#d54e53, #164e90);
+  color: var(--color-text);
+  position: relative;
+  background-image: linear-gradient(var(--color-red), var(--color-blue));
   height: 7cm;
   width: 2cm;
   border-radius: 1cm;
-  margin: 0cm 2cm;
+  margin: 0cm 3cm;
 }
 
 .grenze {
@@ -222,31 +258,24 @@ body, html {
   top: 0.25cm;
 }
 
+#untereGrenzehumd {
+  bottom: 0.25cm;
+}
+
+#obereGrenzehumd {
+  top: 0.25cm;
+}
+
 .strich {
   position: absolute;
   width: 80%;
   margin-left: 10%;
-  background-color: #969896;
+  background-color: var(--color-gray);
   height: 0.1cm;
 }
 
-#box-status {
-  position: relative;
-  display: none;
-  background-color: var(--color-background);
-  text-align: center;
-  border-radius: 20px;
-  color: var(--color-text);
-  z-index: 10;
-  font-size: 30px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  overflow-y: auto;
-  width: 98%;
-  margin-left: auto;
-  margin-right: auto;
+.aktuelleDaten{
+  font-size: 0.5cm;
 }
 
 #Starttext-top {
