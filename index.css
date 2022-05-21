@@ -195,11 +195,12 @@ body, html {
 .anzeigen {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
 }
 
-.Temphumdgrap{
-    width: 8cm;
-    height: 7cm;
+.Temphumdgrap {
+  width: 8cm;
+  height: 7cm;
 }
 
 .Thermometercase {
@@ -208,8 +209,6 @@ body, html {
   width: 8cm;
   display: none;
   margin: auto;
-  border-style: solid;
-  border-color: var(--color-orange);
 }
 
 .Thermometercase p {
@@ -274,8 +273,40 @@ body, html {
   height: 0.1cm;
 }
 
-.aktuelleDaten{
+.aktuelleDaten {
+  font-size: 0.7cm;
+}
+
+.zeit {
   font-size: 0.5cm;
+  color: var(--color-background-dark);
+}
+
+.aktuelleDaten table {
+  text-align: center;
+  margin: auto;
+}
+
+.aktuelleDaten table thead tr th {
+  margin: 20px;
+}
+
+#controll input {
+  color: green;
+  background-color: var(--color-background-dark);
+}
+
+.grenzwerte {
+  display: none;
+}
+
+.grenzwerte table{
+  border-collapse: collapse;
+}
+
+.grenzwerte td {
+  border-bottom: 1px solid;
+  border-top: 1px solid;
 }
 
 #Starttext-top {
