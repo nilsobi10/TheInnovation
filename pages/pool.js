@@ -4,7 +4,7 @@ var poolpage = document.querySelector("#pool");
 function ini_pool() {
   startload();
 
-  fetch("https://theinnovation-db-gewaechshaus.vercel.app/api/getData.js", {
+  fetch("https://theinnovation-db-gewaechshaus.vercel.app/api/getTemperature.js", {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
