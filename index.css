@@ -1,3 +1,18 @@
+:root {
+  --color-background-dark: #282c34;
+  --color-background: #33333D;
+  --color-background-light: #373740;
+  --color-text: #d9e6e1;
+  --color-red: #cc3e44;
+  --color-gray: #7494a3;
+  --color-blue: #519aba;
+  --color-green: #8dc149;
+  --color-yellow: #cbcb41;
+  --color-pink: #f55385;
+  --color-purple: #a074c4;
+  --color-orange: #e37933;
+}
+
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -20,7 +35,7 @@ body, html {
 }
 
 #impressum {
-  color: green;
+  color: var(--color-green);
 }
 
 #weitereInfos {
@@ -29,7 +44,7 @@ body, html {
 }
 
 #weitereInfos:hover {
-  color: blue;
+  color: var(--color-blue);
 }
 
 #info {
@@ -37,15 +52,16 @@ body, html {
 }
 
 .box {
-  background-image: linear-gradient(45deg, #00bb00, green);
-  opacity: 0.95;
+  position: relative;
+  background-color: var(--color-background-light);
   padding: 20px 20px;
   margin: auto;
   text-align: center;
-  border-radius: 20px;
-  color: white;
+  color: var(--color-text);
   z-index: 10;
   font-size: 20px;
+  border-left-style: solid;
+  border-left-width: 10px;
 }
 
 # {
@@ -55,20 +71,19 @@ body, html {
 
 #box-Pflanzen {
   position: relative;
-  background-image: linear-gradient(45deg, #00bb00, green);
-  opacity: 0.95;
+  background-color: var(--color-background-dark);
   padding: 20px 20px 40px 20px;
   margin: auto;
   height: 100%;
   width: 70%;
   border-radius: 20px;
-  color: white;
+  color: var(--color-text);
   z-index: 10;
   font-size: 20px;
 }
 
 .fa, .far, .fas {
-  color: white;
+  color: var(--color-text);
   font-size: 100%;
 }
 
@@ -83,15 +98,15 @@ body, html {
   bottom: 20px;
 }
 
-.box-impressum {
+#box-impressum {
   opacity: 0.95;
-  background-image: linear-gradient(45deg, #00bb00, green);
+  background-color: var(--color-background-dark);
   height: 100%;
   padding: 10px 20px;
   margin: auto;
   text-align: center;
   border-radius: 20px;
-  color: white;
+  color: var(--color-text);
   z-index: 10;
   font-size: 30px;
 }
@@ -108,12 +123,12 @@ body, html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: green;
+  background: var(--color-green);
   border-radius: 2.5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00bb00;
+  background: var(--color-green);
 }
 
 .page {
@@ -122,10 +137,9 @@ body, html {
   width: calc(100% - 1cm);
   min-height: calc(100% - 2cm - 1cm);
   display: none;
-  background-color: #eee;
+  background-color: var(--color-background);
   padding: 0.5cm;
   font-size: 0.5cm;
-  background: url(background.png) repeat center center;
   background-size: cover;
 }
 
@@ -139,42 +153,90 @@ body, html {
 
 .Starttext {
   position: relative;
-  color: white;
+  color: var(--color-text);
   padding: 3%;
   margin-bottom: 2%;
   width: 75%;
   font-size: 160%;
-  background-image: linear-gradient(45deg, #00bb00, green);
-  opacity: 0.9;
-  border-radius: 20px;
+  background-color: var(--color-background-light);
+  border-left-style: solid;
+  border-left-width: 10px;
+}
+
+.Starttext:nth-child(3n+1) {
+  border-left-color: var(--color-pink);
+}
+
+.Starttext:nth-child(3n+2) {
+  border-left-color: var(--color-red);
+}
+
+.Starttext:nth-child(3n+3) {
+  border-left-color: var(--color-orange);
 }
 
 .Starttext:hover {
-  background-image: linear-gradient(45deg, #00bb00, #00bb00);
+  background-color: var(--color-background-dark);
+}
+
+#box-status {
+  width: 100%;
+  border-left-color: var(--color-orange);
+  margin: 0px;
+  margin-top: 2cm;
+  font-size: 1cm;
+}
+
+.uberschrift {
+  margin: 10px;
+  font-weight: bold;
+}
+
+.anzeigen {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Temphumdgrap {
+  width: 8cm;
+  height: 7cm;
 }
 
 .Thermometercase {
+  font-size: 0.7cm;
   position: relative;
-  width: 3cm;
+  width: 8cm;
   display: none;
+  margin: auto;
+}
+
+.Thermometercase p {
+  position: absolute;
+  opacity: 0;
+  right: 0px;
+  font-size: 0.5cm;
+}
+
+.Thermometercase p:hover {
+  opacity: 1;
 }
 
 .Temperatur {
   position: absolute;
-  font-size: 0.7cm;
   margin: 0px;
   padding: 0px;
-  left: 4.25cm;
+  left: 5.25cm;
 }
 
 .Thermometer {
-  color: #eaeaea;
-  position: absolute;
-  background-image: linear-gradient(#d54e53, #164e90);
+  color: var(--color-text);
+  position: relative;
+  background-image: linear-gradient(var(--color-red), var(--color-blue));
   height: 7cm;
   width: 2cm;
   border-radius: 1cm;
-  margin: 0cm 2cm;
+  margin: 0cm 3cm;
 }
 
 .grenze {
@@ -195,32 +257,56 @@ body, html {
   top: 0.25cm;
 }
 
-.strich{
+#untereGrenzehumd {
+  bottom: 0.25cm;
+}
+
+#obereGrenzehumd {
+  top: 0.25cm;
+}
+
+.strich {
   position: absolute;
   width: 80%;
   margin-left: 10%;
-  background-color: #969896;
+  background-color: var(--color-gray);
   height: 0.1cm;
 }
 
-#box-status {
-  position: relative;
-  opacity: 0.95;
-  display: none;
-  background-image: linear-gradient(45deg, #00bb00, green);
+.aktuelleDaten {
+  font-size: 0.7cm;
+}
+
+.zeit {
+  font-size: 0.5cm;
+  color: var(--color-background-dark);
+}
+
+.aktuelleDaten table {
   text-align: center;
-  border-radius: 20px;
-  color: white;
-  z-index: 10;
-  font-size: 30px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  overflow-y: auto;
-  width: 98%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+}
+
+.aktuelleDaten table thead tr th {
+  margin: 20px;
+}
+
+#controll input {
+  color: green;
+  background-color: var(--color-background-dark);
+}
+
+.grenzwerte {
+  display: none;
+}
+
+.grenzwerte table{
+  border-collapse: collapse;
+}
+
+.grenzwerte td {
+  border-bottom: 1px solid;
+  border-top: 1px solid;
 }
 
 #Starttext-top {
@@ -233,7 +319,7 @@ body, html {
 
 .headline {
   font-size: 50px;
-  color: white;
+  color: var(--color-text);
 }
 
 .menu {
@@ -243,7 +329,7 @@ body, html {
   top: 0;
   left: 0;
   height: 100%;
-  background-color: #eee;
+  background-color: var(--color-background);
   transition: transform 0.3s ease-in-out;
   overflow-y: auto;
   overflow-x: hidden;
@@ -253,10 +339,10 @@ body, html {
   /* NOTE: Hintergrund von der Überschrift im Menü */
   height: 7cm;
   width: 100%;
-  background-image: linear-gradient(45deg, #00bb00, green);
+  background-color: var(--color-background);
   transform: scaleX(-1);
   font-size: 1cm;
-  color: white;
+  color: var(--color-text);
   transition: width 1s;
 }
 
@@ -281,17 +367,17 @@ body, html {
   text-align: center;
   display: flex;
   font-size: 0.7cm;
-  background: #00bb00;
+  background-color: var(--color-background-dark);
   border: none;
   border-radius: 0.85cm;
   margin: 0.2cm auto 1cm auto;
   outline: none;
   transition: background-color 0.15s linear;
-  color: white;
+  color: var(--color-text);
 }
 
 .menulogin input:hover {
-  background-color: #00dd00;
+  background-color: var(--color-background-light);
 }
 
 .menulogin button {
@@ -300,7 +386,7 @@ body, html {
   font-size: 1cm;
   height: 1.7cm;
   padding: 0.25cm 1cm 0.25cm 1cm;
-  background: #00bb00;
+  background: var(--color-background-light);
   border: none;
   border-radius: 0.85cm;
   margin: 0 auto;
@@ -310,30 +396,44 @@ body, html {
 }
 
 .menulogin button:hover {
-  background-color: #00dd00;
+  background-color: var(--color-background-dark);
 }
 
 .menupoints {
   height: calc(100% - 7cm);
-  color: #212121 !important;
+  color: var(--color-text);
   transform: scaleX(-1);
 }
 
 .menupoints a {
-  width: calc(100% - 1.6cm);
+  border-left-style: solid;
   display: flex;
   align-items: center;
-  color: #212121 !important;
+  color: var(--color-text);
   height: 1cm;
   font-size: 0.75cm;
   text-decoration: none;
   padding: 0.7cm 0.8cm;
   transition: background-color 0.1s linear;
-  background-color: #eee;
+  background-color: var(--color-background-light);
+  border-bottom-style: solid;
+  border-bottom-color: var(--color-background);
+}
+
+.menupoints a:nth-child(3n+1) {
+  border-left-color: var(--color-pink);
+}
+
+.menupoints a:nth-child(3n+2) {
+  border-left-color: var(--color-red);
+}
+
+.menupoints a:nth-child(3n+3) {
+  border-left-color: var(--color-orange);
 }
 
 .menupoints a:hover {
-  background-color: #fff;
+  background-color: var(--color-background-dark);
 }
 
 .menuoverlay {
@@ -343,7 +443,7 @@ body, html {
   top: 0;
   left: 0;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--color-background-dark);
   transition: opacity 0.3s linear;
 }
 
@@ -352,16 +452,16 @@ body, html {
   top: 0;
   left: 0;
   position: fixed;
-  background-color: green;
+  background-color: var(--color-background-dark);
   height: 2cm;
   width: calc(100% - 4cm);
   font-size: 250%;
   justify-content: center;
   align-items: center;
   display: flex;
-  color: white;
+  color: var(--color-text);
   padding: 0 2cm;
-  box-shadow: 0px 3px 4px 4px green;
+  box-shadow: 0px 3px 4px 4px var(--color-background-dark);
 }
 
 .topbar img {
@@ -419,18 +519,21 @@ body, html {
   left: 4%;
   top: 4%;
   animation-delay: 0s;
+  background-color: var(--color-pink);
 }
 
 .loadingbox div:nth-child(2) {
   left: 52%;
   top: 52%;
   animation-delay: -2s;
+  background-color: var(--color-red);
 }
 
 .loadingbox div:nth-child(3) {
   left: 4%;
   top: 52%;
   animation-delay: -4s;
+  background-color: var(--color-orange);
 }
 
 @keyframes loadingboxani {

@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="menupoints" onclick="closemenu();">
-      <a href="#home">Startseite</a>
+      <a href="#home">Startseite </a>
       <a href="#plant">Pflanzen</a>
       <a href="#status">Status</a>
       <a href="#controll">Steuerung</a>
@@ -48,7 +48,7 @@
   </div>
   <div class="topbar">
     <img src="menu.png" onclick="openmenu();" draggable="false">
-    Gewächshaus
+    <p onclick="window.location.href='index.html'">Gewächshaus</p>
   </div>
   <div class="page" id="home">
 
@@ -81,7 +81,7 @@
 
   </div>
   <div class="page" id="plant">
-    <div id="box-Pflanzen" id="Pflanzen">
+    <div class="box" id="box-Pflanzen" id="Pflanzen">
       <div id="Pflanzen"></div>
       <i class="far fa-plus-square" id="addplant" onclick="addplant();"></i>
     </div>
@@ -89,34 +89,168 @@
 
 
   <div class="page" id="status">
-    <div class="box" id="status">
-      <h1>Status</h1>
-      <p onclick="">Temperatur / Luftfeuchtigkeit</p>
-      <div class="Thermometercase">
+    <div class="box" id="box-status">
+      <p class="uberschrift">Status</p>
 
-        <div class="Thermometer">
-          <div class="grenze" id="obereGrenze"></div>
-          <div class="grenze" id="untereGrenze"></div>
-          <div class="strich" id="Strich1"></div>
-          <div class="strich" id="Strich2"></div>
-          <div class="strich" id="Strich3"></div>
+      <p>Temperatur und Luftfeuchtigkeit im Gewächshaus</p>
+      <div class="anzeigen">
+        <div class="Thermometercase">
+          <div class="Thermometer">
+            <div class="grenze" id="obereGrenze"></div>
+            <div class="grenze" id="untereGrenze"></div>
+            <div class="strich" id="Strich1"></div>
+            <div class="strich" id="Strich2"></div>
+            <div class="strich" id="Strich3"></div>
+          </div>
+          <div class="Temperatur" id="Temperatur1"></div>
+          <div class="Temperatur" id="Temperatur2"></div>
+          <div class="Temperatur" id="Temperatur3"></div>
         </div>
-        <div class="Temperatur" id="Temperatur1" onclick="openTemperature(1);"></div>
-        <div class="Temperatur" id="Temperatur2" onclick="openTemperature(2);"></div>
-        <div class="Temperatur" id="Temperatur3" onclick="openTemperature(3);"></div>
+        <div class="Thermometercase">
+          <div class="Thermometer">
+            <div class="grenze" id="obereGrenzehumd"></div>
+            <div class="grenze" id="untereGrenzehumd"></div>
+            <div class="strich" id="Strich1humd"></div>
+            <div class="strich" id="Strich2humd"></div>
+            <div class="strich" id="Strich3humd"></div>
+          </div>
+          <div class="Temperatur" id="Luftfeuchtigkeit1"></div>
+          <div class="Temperatur" id="Luftfeuchtigkeit2"></div>
+          <div class="Temperatur" id="Luftfeuchtigkeit3"></div>
+        </div>
+        <div class="Temphumdgrap">
+          Hier ist demnächst ein Graph zu sehen
+        </div>
       </div>
-      <p onclick="">Bodenfeuchtigkeit</p>
-      <p onclick="">Wassertank</p>
+
+      <div class="aktuelleDaten">
+        <p>aktuelle Messdaten </p>
+        <p class="zeit"> Messdaten vom: </p>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Temperatur</th>
+              <th>Luftfeuchtigkeit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dachhöhe</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Pflanzenhöhe</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Bodenhöhe</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <td>Durchschnitt</td>
+            <td></td>
+            <td></td>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Bodenfeuchtigkeit</p>
+      <p>Wassertank</p>
       <p>Wetterstation</p>
 
     </div>
   </div>
 
   <div class="page" id="controll">
+    <div class="box">
+      <p class="uberschrift"> Steuerung</p>
 
-  </div>
-  <div class="page" id="controll">
-    Steuerung
+
+      <form action="https://theinnovation-db-gewaechshaus.vercel.app/api/addAuftrag.js" method="get" target="hidden-form">
+        <iframe style="display:none" name="hidden-form"></iframe>
+        <p>Ventile</p>
+        <div class="ventile">
+          <br>
+          <label>Ventil 1</label>
+          <input type="number" name="vtl1" min="0" value="0">
+          <br>
+          <label>Ventil 2</label>
+          <input type="number" name="vtl2" min="0" value="0">
+          <br>
+          <label>Ventil 3</label>
+          <input type="number" name="vtl3" min="0" value="0">
+          <br>
+          <label>Ventil 4</label>
+          <input type="number" name="vtl4" min="0" value="0">
+          <br>
+
+        </div>
+
+        <label>Pumpe</label>
+        <input type="number" name="pum" min="0" value="0">
+        <br>
+        <label>Dachmotor</label>
+        <input type="number" name="dachs">
+        <br>
+
+        <h4 onclick="opengrenzwerte();">Grenzwerte</h4>
+        <div class="grenzwerte">
+
+          <table>
+            <tr>
+              <td>
+                <label>Bodenfeuchtigkeitsminimum1</label>
+                <input type="number" name="bft1min">
+              </td>
+              <td>
+                <label>Bodenfeuchtigkeitsoptimum1</label>
+                <input type="number" name="bft1op">
+              </td>
+              <td>
+
+                <label>Bodenfeuchtigkeitsmaximum1</label>
+                <input type="number" name="bft1max">
+              </td>
+            </tr>
+            <tr>
+            <td>
+              <label>Bodenfeuchtigkeitsminimum2</label>
+              <input type="number" name="bft2min">
+            </td>
+              <td>
+                <label>Bodenfeuchtigkeitsoptimum2</label>
+                <input type="number" name="bft2op">
+              </td>
+              <td>
+                <label>Bodenfeuchtigkeitsmaximum2</label>
+                <input type="number" name="bft2max">
+              </td>
+            </tr>
+            <tr>
+            <td>
+              <label>Bodenfeuchtigkeitsminimum3</label>
+              <input type="number" name="bft3min">
+            </td>
+              <td>
+                <label>Bodenfeuchtigkeitsoptimum3</label>
+                <input type="number" name="bft3op">
+              </td>
+              <td>
+
+                <label>Bodenfeuchtigkeitsmaximum3</label>
+                <input type="number" name="bft3max">
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <button type="submit">Senden</button>
+        <button type="reset">Reset</button>
+      </form>
+    </div>
   </div>
   <div class="page" id="wetter">
     <div class="box" id="klima" onclick="ini_wetter()">
@@ -125,6 +259,7 @@
       <br> Lade die Seite bitte neu oder klicke hier.
     </div>
   </div>
+  
   <div class="page" id="pool">
     <div id="graph2">
       <div id="chart">
@@ -133,7 +268,7 @@
     </div>
   </div>
   <div class="page" id="impressum">
-    <div class="box-impressum">
+    <div class="box" id="box-impressum">
       <p>Impressum: <br>
         <br>
         Nils Oberländer <br>

@@ -19,8 +19,8 @@ function ini_sites(e) {
       ini_wetter();
       break;
     case "#pool":
-      //ini_pool();
-      window.location.href = 'wassertemperatur/wassertemperatur.html';
+      ini_pool();
+      //window.location.href = 'wassertemperatur/wassertemperatur.html';
       break;
     case "#impressum":
       ini_impressum();
@@ -44,7 +44,7 @@ function openmenu() {
   document.querySelector(".menu").style.cssText = "transform:translateX(0) scaleX(-1);";
   document.querySelector(".menuoverlay").style.display = "";
   window.setTimeout(function() {
-    document.querySelector(".menuoverlay").style.opacity = 1;
+    document.querySelector(".menuoverlay").style.opacity = 0.7;
   }, 10);
 };
 
@@ -79,6 +79,7 @@ function closelogin() {
 };
 
 function checkpassword() {
+  //das neue ist hier
   (async () => {
     anmeldung = password.value;
     var hash = (await crypto.subtle.digest("SHA-256", (new TextEncoder().encode(anmeldung))));
