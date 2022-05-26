@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <title>Gewächshaus</title>
   <script src="https://kit.fontawesome.com/10f0e1a6f3.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
 
 </head>
 
@@ -261,10 +262,19 @@
   </div>
 
   <div class="page" id="pool">
-    <div id="graph2">
-      <div id="chart">
+    <div class="chart">
+
+      <canvas id="myChart"></canvas>
+      <div id="poolbottom">
+        <p>von:
+          <input type="datetime-local" name="anfangswert" value="" id="anfangswert">
+          bis:
+          <input type="datetime-local" name="endwert" value="" id="endwert">
+        </p>
       </div>
     </div>
+
+
   </div>
   <div class="page" id="impressum">
     <div class="box" id="box-impressum">
