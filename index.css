@@ -309,6 +309,20 @@ body, html {
   border-top: 1px solid;
 }
 
+.chart{
+  position: relative;
+  width: 100%;
+}
+
+#poolbottom{
+  position: absolute;
+  bottom: 0px;
+  justify-content: center;
+  display: grid;
+  width: 60%;
+  left: 20%;
+}
+
 #Starttext-top {
   margin-top: 3%;
 }
