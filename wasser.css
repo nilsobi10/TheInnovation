@@ -1,0 +1,35 @@
+* {}
+
+.chart {
+  position: relative;
+  padding-top: 10%;
+}
+
+#zeitraum {
+  position: relative;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#zeitraum input {
+  font-size: 2rem;
+}
+
+.temperatur {
+  padding: 25%;
+}
+
+#wassertemperatur {
+  position: relative;
+  text-align: center;
+  font-size: 2rem;
+  margin: 0px;
+}
+
+#datum {
+  position: relative;
+  text-align: center;
+  font-size: 1.5rem;
+  color: gray;
+  margin: 0px;
+}
