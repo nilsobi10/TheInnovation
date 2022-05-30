@@ -85,25 +85,25 @@ fetch("https://theinnovation-db-gewaechshaus.vercel.app/api/getTemperature.js", 
   .then(text => text.json())
   .then(d => {
     var data = d.data;
-    document.querySelector('#anfangswert').valueAsNumber = data[0].uts * 1000 + 7200000;
-    document.querySelector('#anfangswert').min = new Date(data[0].uts * 1000 + 7200000).toISOString().split(".")[0];
+    document.querySelector('#anfangswert').valueAsNumber = data[0].uts * 1000;
+    document.querySelector('#anfangswert').min = new Date(data[0].uts * 1000).toISOString().split(".")[0];
     document.querySelector('#anfangswert').max = new Date(data[data.length - 1].uts * 1000).toISOString().split(".")[0];
 
-    document.querySelector('#endwert').valueAsNumber = data[data.length - 1].uts * 1000 + 7200000;
-    document.querySelector('#endwert').max = new Date(data[data.length - 1].uts * 1000 + 7200000).toISOString().split(".")[0];
+    document.querySelector('#endwert').valueAsNumber = data[data.length - 1].uts * 1000;
+    document.querySelector('#endwert').max = new Date(data[data.length - 1].uts * 1000).toISOString().split(".")[0];
     document.querySelector('#endwert').min = new Date(data[0].uts * 1000).toISOString().split(".")[0];
 
     document.getElementById('wassertemperatur').innerHTML = "aktuelle Wassertemperatur: " + data[data.length - 1].pool + " °C";
     console.log(data[data.length - 1]);
-    document.getElementById('datum').innerHTML = "gemessen: " + convertuts(data[data.length - 1].uts * 1000 + 7200000);
+    document.getElementById('datum').innerHTML = "gemessen: " + convertuts(data[data.length - 1].uts * 1000);
 
     for (var i = 0; i < data.length; i++) {
       temperatur[i] = data[i].pool;
-      time[i] = new Date(data[i].uts * 1000+ 7200000);
+      time[i] = new Date(data[i].uts * 1000);
       date[i] = convertuts(time[i]);
     };
 
-  
+
     window.massPopChar = new Chart(myChart, {
       type: 'line',
       data: {
